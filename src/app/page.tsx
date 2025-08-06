@@ -46,7 +46,7 @@ const trackCTAClick = (ctaNumber: number, sectionId: number, ctaType: string, bu
 
       // Meta Pixel tracking
       if (window.fbq) {
-        // Custom LPInitiate_Quiz-typeform event
+        // Custom Old_LInitiate_Quiz event
         const initiateQuizData = {
           content_name: `CTA_${ctaNumber}`,
           content_category: `Seção ${sectionId}`,
@@ -55,18 +55,18 @@ const trackCTAClick = (ctaNumber: number, sectionId: number, ctaType: string, bu
           ...baseEventData
         };
 
-        window.fbq('trackCustom', 'LPInitiate_Quiz-typeform', initiateQuizData);
+        window.fbq('trackCustom', 'Old_LInitiate_Quiz', initiateQuizData);
         
-        // Custom LPCta-click event with specific number and typeform suffix
-        const ctaEventName = `LPCta-click-${ctaNumber}-typeform`;
+        // Custom Old_LCta-click event with specific number
+        const ctaEventName = `Old_LCta-click-${ctaNumber}`;
         window.fbq('trackCustom', ctaEventName, baseEventData);
 
-        console.log(`📊 Meta Pixel: ${ctaEventName} e LPInitiate_Quiz-typeform - "${buttonText}" clicado na seção ${sectionId}`);
+        console.log(`📊 Meta Pixel: ${ctaEventName} e Old_LInitiate_Quiz - "${buttonText}" clicado na seção ${sectionId}`);
       }
 
       // TikTok Pixel tracking
       if (window.ttq) {
-        // Custom LPInitiate_Quiz-typeform event for TikTok
+        // Custom Old_LInitiate_Quiz event for TikTok
         const tiktokInitiateData = {
           content_name: `CTA_${ctaNumber}`,
           content_category: `Seção ${sectionId}`,
@@ -75,13 +75,13 @@ const trackCTAClick = (ctaNumber: number, sectionId: number, ctaType: string, bu
           ...baseEventData
         };
 
-        window.ttq.track('LPInitiate_Quiz-typeform', tiktokInitiateData);
+        window.ttq.track('Old_LInitiate_Quiz', tiktokInitiateData);
         
-        // Custom LPCta-click event for TikTok
-        const tiktokCtaEventName = `LPCta-click-${ctaNumber}-typeform`;
+        // Custom Old_LCta-click event for TikTok
+        const tiktokCtaEventName = `Old_LCta-click-${ctaNumber}`;
         window.ttq.track(tiktokCtaEventName, baseEventData);
 
-        console.log(`📊 TikTok Pixel: ${tiktokCtaEventName} e LPInitiate_Quiz-typeform - "${buttonText}" clicado na seção ${sectionId}`);
+        console.log(`📊 TikTok Pixel: ${tiktokCtaEventName} e Old_LInitiate_Quiz - "${buttonText}" clicado na seção ${sectionId}`);
       }
     }, 0);
   }
@@ -89,17 +89,17 @@ const trackCTAClick = (ctaNumber: number, sectionId: number, ctaType: string, bu
 
 // Function to build quiz URL with UTM parameters
 const buildQuizURL = (source: string = 'landing-page') => {
-  const baseURL = 'https://form.typeform.com/to/A6pgHoo2';
+  const baseURL = 'https://quiz.felipiska.com/';
   
   if (typeof window === 'undefined') {
-    return baseURL;
+    return `${baseURL}?utm_source=${source}&utm_medium=cta&utm_campaign=piscapage&page=oldEst`;
   }
 
   try {
     const storedParams = sessionStorage.getItem('utmParams');
     if (!storedParams) {
       // Se não há UTMs armazenados, adicionar UTMs básicos para rastreamento interno
-      const fallbackURL = `${baseURL}?utm_source=${source}&utm_medium=cta&utm_campaign=piscapage`;
+      const fallbackURL = `${baseURL}?utm_source=${source}&utm_medium=cta&utm_campaign=piscapage&page=oldEst`;
       console.log('🔗 Quiz URL (sem UTMs originais):', fallbackURL);
       return fallbackURL;
     }
@@ -125,8 +125,11 @@ const buildQuizURL = (source: string = 'landing-page') => {
       urlParams.append('utm_campaign', 'piscapage');
     }
 
+    // Sempre adicionar o parâmetro page=oldEst
+    urlParams.append('page', 'oldEst');
+
     const queryString = urlParams.toString();
-    const finalURL = queryString ? `${baseURL}?${queryString}` : baseURL;
+    const finalURL = queryString ? `${baseURL}?${queryString}` : `${baseURL}?page=oldEst`;
     
     console.log(`🔗 Quiz URL construída (${source}):`, finalURL);
     console.log('📊 Parâmetros UTM passados adiante:', Object.fromEntries(urlParams));
@@ -134,7 +137,7 @@ const buildQuizURL = (source: string = 'landing-page') => {
     return finalURL;
   } catch (error) {
     console.error('Erro ao construir URL do quiz:', error);
-    const fallbackURL = `${baseURL}?utm_source=${source}&utm_medium=cta&utm_campaign=piscapage`;
+    const fallbackURL = `${baseURL}?utm_source=${source}&utm_medium=cta&utm_campaign=piscapage&page=oldEst`;
     console.log('🔗 Quiz URL (fallback):', fallbackURL);
     return fallbackURL;
   }

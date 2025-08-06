@@ -51,7 +51,7 @@ export default function RootLayout({
               'https://connect.facebook.net/en_US/fbevents.js');
               
               // Inicializar o pixel
-              fbq('init', '730034323072546');
+              fbq('init', '2412597382039592');
               
               // Função para capturar e armazenar parâmetros UTM
               function captureAndStoreUTMParams() {
@@ -103,10 +103,10 @@ export default function RootLayout({
                 };
               }
               
-              // Disparar evento LPage-view-typeform
+              // Disparar evento Old_LPage-view
               const cleanParams = getAllTrackingParams();
-              fbq('trackCustom', 'LPage-view-typeform', cleanParams);
-              console.log('📊 Meta Pixel: LPage-view-typeform disparado com parâmetros:', cleanParams);
+              fbq('trackCustom', 'Old_LPage-view', cleanParams);
+              console.log('📊 Meta Pixel: Old_LPage-view disparado com parâmetros:', cleanParams);
             `,
           }}
         />
@@ -126,10 +126,10 @@ export default function RootLayout({
                 ttq.load('D259I0RC77U5781ILVK0');
                 ttq.page();
                 
-                // Disparar evento customizado LPage-view-typeform para TikTok
+                // Disparar evento customizado Old_LPage-view para TikTok
                 const tiktokParams = getAllTrackingParams();
-                ttq.track('LPage-view-typeform', tiktokParams);
-                console.log('📊 TikTok Pixel: LPage-view-typeform disparado com parâmetros:', tiktokParams);
+                ttq.track('Old_LPage-view', tiktokParams);
+                console.log('📊 TikTok Pixel: Old_LPage-view disparado com parâmetros:', tiktokParams);
               }(window, document, 'ttq');
             `,
           }}
