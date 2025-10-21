@@ -202,26 +202,31 @@ export default function Home() {
   const [selectedOrders, setSelectedOrders] = useState(17)
   const exchangeRate = 6.50
   
-  // Quiz URLs with UTM tracking
+  // URL única para Typeform
+  const TYPEFORM_URL = 'https://form.typeform.com/to/g7UoeZxv'
+  
+  // Quiz URLs com redirecionamento para Typeform
   const [quizURLs, setQuizURLs] = useState({
-    banner1: 'https://quiz.felipiska.com/quiz/c0pN3w/',
-    images: 'https://quiz.felipiska.com/quiz/c0pN3w/',
-    continue: 'https://quiz.felipiska.com/quiz/c0pN3w/',
-    joinMentoria: 'https://quiz.felipiska.com/quiz/c0pN3w/'
+    banner1: TYPEFORM_URL,
+    images: TYPEFORM_URL,
+    continue: TYPEFORM_URL,
+    joinMentoria: TYPEFORM_URL
   })
 
-  // Ensure hydration and build quiz URLs
+  // Garantir hidratação e definir URLs dos CTAs
   useEffect(() => {
     setIsClient(true)
     
-    // Build quiz URLs with UTM parameters after hydration
+    // Definir todos os CTAs para o Typeform após hidratação
     setQuizURLs({
-      banner1: buildQuizURL('banner1'),
-      images: buildQuizURL('images'),
-      continue: buildQuizURL('continue'),
-      joinMentoria: buildQuizURL('join-mentoria')
+      banner1: TYPEFORM_URL,
+      images: TYPEFORM_URL,
+      continue: TYPEFORM_URL,
+      joinMentoria: TYPEFORM_URL
     })
   }, [])
+
+
 
   // Handle Euro input change
   const handleEuroChange = (value: number) => {
@@ -284,7 +289,7 @@ export default function Home() {
                     <div className="text-[#21f74f] text-shadow-green-300 text-center text-[18px] font-bold mx-4">
                       <p>Enquanto o Brasil afoga seus empreendedores,
                       empresários globais estão lucrando em euro, libra e dólar.</p>
-                      <span className="text-[#ffffff] font-normal text-[12px] mt-5 line-clamp-3 mx-1">Descubra em uma Consultoria Gratuita como empreendedores estão ganhando até 7x mais vendendo produtos físicos sem ter estoque na Europa usando o modelo dropshipping <span className="text-[#21f74f] font-semibold">Ainda em 2025</span></span>
+                      <span className="text-[#ffffff] font-normal text-[12px] mt-5 line-clamp-3 mx-1">Descubra em uma Consultoria Gratuita como empreendedores estão ganhando até 7x mais vendendo produtos físicos sem ter estoque na Europa usando o modelo dropshipping <span className="text-[#21f74f] font-semibold"></span></span>
                     </div>
                     
                   {/* Button */}
@@ -394,7 +399,7 @@ export default function Home() {
                        >
                          Quero o plano prático para estruturar minha operação global
                        </a>
-                       <p className="text-[#e4e4e4] text-[12px] text-sm mt-4 mx-3 text-center">
+                       <p className="text-[#e4e4e4] text-[12px] text-sm mt-4 mx-4 text-center">
                          Selecionaremos apenas 4 empreendedores no mês de outubro
                        </p>
                      </div>
