@@ -283,14 +283,14 @@ export default function Home() {
                   <div className="space-y-8">
                     <div className="text-[#21f74f] text-shadow-green-300 text-center text-[18px] font-bold mx-4">
                       <p>Enquanto o Brasil afoga seus empreendedores,
-                      empresários globais estão lucrando em euro, libra e dólar com operações simples e validadas.</p>
-                      <span className="text-[#ffffff] font-normal text-[10px] mt-4 line-clamp-3">Consultoria estratégica gratuita para empreendedores que querem vender em euro, libra ou dólar com uma estrutura enxuta, validada e escalável — <span className="text-[#21f74f] font-semibold">Ainda em 2025</span></span>
+                      empresários globais estão lucrando em euro, libra e dólar.</p>
+                      <span className="text-[#ffffff] font-normal text-[12px] mt-5 line-clamp-3 mx-1">Descubra em uma Consultoria Gratuita como empreendedores estão ganhando até 7x mais vendendo produtos físicos sem ter estoque na Europa usando o modelo dropshipping <span className="text-[#21f74f] font-semibold">Ainda em 2025</span></span>
                     </div>
                     
                   {/* Button */}
                                       <div className="mb-5"> {/* Aumenta o espaçamento abaixo do primeiro botão */}
                         <a 
-                          href={quizURLs.banner1} 
+                          href="https://form.typeform.com/to/g7UoeZxv" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="inline-block bg-gradient-to-r rounded-lg shadow-lg shadow-[#0fff1ba2] from-[#03af0c] via-[#0fe219] to-[#0fc718] text-white text-bold px-4 py-4 text-[18px] transition-colors cursor-pointer"
@@ -299,7 +299,7 @@ export default function Home() {
                           {section.buttonText}
                         </a>
                       <p className="text-gray-200 text-[12px] text-sm mt-4 mx-4 text-center">
-                        Selecionaremos apenas 8 empreendedores no mês de agosto
+                        Selecionaremos apenas 4 empreendedores no mês de outubro
                       </p>
                     </div>
                   </div>
@@ -332,7 +332,7 @@ export default function Home() {
                      {/* Button */}
                      <div className="text-center mt-8 mb-12">
                        <a 
-                         href={quizURLs.banner1} 
+                         href="https://form.typeform.com/to/g7UoeZxv" 
                          target="_blank" 
                          rel="noopener noreferrer"
                          className="inline-block bg-gradient-to-r rounded-lg shadow-lg shadow-[#0fff1ba2] from-[#03af0c] via-[#0fe219] to-[#0fc718] text-white text-bold px-6 py-4 text-[18px] transition-colors cursor-pointer"
@@ -340,8 +340,8 @@ export default function Home() {
                        >
                          Quero aplicar para a consultoria gratuita
                        </a>
-                       <p className="text-[#0f0f0f] text-sm mt-6 text-center">
-                         Selecionaremos apenas 8 empreendedores no mês de agosto
+                       <p className="text-[#0f0f0f] text-[12px] text-sm mt-4 mx-3 text-center">
+                         Selecionaremos apenas 4 empreendedores no mês de outubro
                        </p>
                      </div>
                    </div>
@@ -394,8 +394,8 @@ export default function Home() {
                        >
                          Quero o plano prático para estruturar minha operação global
                        </a>
-                       <p className="text-[#e4e4e4] text-sm mt-8 text-center">
-                         Selecionaremos apenas 8 empreendedores no mês de agosto
+                       <p className="text-[#e4e4e4] text-[12px] text-sm mt-4 mx-3 text-center">
+                         Selecionaremos apenas 4 empreendedores no mês de outubro
                        </p>
                      </div>
 
